@@ -1,0 +1,18 @@
+name: 'Docker::Hub'
+description: 'Push Docker image for Docker Hub'
+inputs:
+  githubName:
+    description: 'The name of the image on Github'
+    required: true
+  dockerHubUser:
+    description: 'Docker Hub username'
+    required: true
+  dockerHubPassword:
+    description: 'Docker Hub password'
+    required: true
+  dockerHubName:
+    description: 'The name of the image on Docker Hub'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
