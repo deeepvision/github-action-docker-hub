@@ -13,7 +13,7 @@ function main() {
   docker logout ${GITHUB_DOCKER_REGISTRY}
 
   echo ${INPUT_DOCKERHUBPASSWORD} | docker login -u ${INPUT_DOCKERHUBUSER} --password-stdin
-  docker tag ${GITHUB_DOCKER_IMAGE_NAME} ${INPUT_DOCKERHUBNAME}
+  docker tag ${GITHUB_DOCKER_IMAGE_NAME} ${INPUT_DOCKERHUBNAME}:${IMAGE_TAG}
   docker push ${INPUT_DOCKERHUBNAME}
   docker logout
 }
